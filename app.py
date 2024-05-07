@@ -204,7 +204,7 @@ def login_post():
     login_user(user)
     return redirect(url_for("user_info", user_id=user.id))
 
-@app.route("/users/<int:user_id>/logout", methods=["POST"])
+@app.route("/logout", methods=["POST"])
 @login_required
 def logout():
     logout_user()
