@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Home</h2>
+    <div style="display: flex;">
+
+        <button type="button"><a href="{{ url_for('login') }}">Login</a></button>
+
+        <button type="button"><a href="{{ url_for('add_new') }}">Add new</a></button>
+
+    </div>
+
+{% endblock %}
