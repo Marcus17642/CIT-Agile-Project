@@ -14,7 +14,7 @@
 
                     <!-- Adjust food amount in meal -->
                     <button type="button" onclick="displayNextElement(this)"> Adjust </button>
-                    <form class="formNeedInput"
+                    <form class="formNeedInputFood"
                     action="{{ url_for('adjust_foodmeal', 
                                         user_id=user.id, 
                                         food_id=food.id) }}" 
@@ -58,7 +58,10 @@
 
             <!-- Get macronutrients -->
             <button type="button" onclick="displayNextElement(this)"> Get macronutrients </button>
-            <div style="display: none;">
+            <div style="display: none;  background-color: white; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 5px solid goldenrod;">
                 <span>{{ each.getMacros().protein|round|int }}g protein</span>
                 <span>{{ each.getMacros().carbs|round|int }}g carbs</span>
                 <span>{{ each.getMacros().fat|round|int }}g fat</span>
@@ -82,7 +85,10 @@
 
     <!-- Get macronutrients for all meals -->
     <button type="button" onclick="displayNextElement(this)"> Get macronutrients all meals </button>
-    <div style="display: none;">
+    <div style="display: none; background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid goldenrod;">
         <span>{{ user.getTotalMacros().protein|round|int }}g protein</span>
         <span>{{ user.getTotalMacros().carbs|round|int }}g carbs</span>
         <span>{{ user.getTotalMacros().fat|round|int }}g fat</span>
