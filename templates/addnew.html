@@ -2,7 +2,8 @@
 
 {% block content %}
     <h2>Register</h2>
-    <div style="display: flex;">
+    <div style="display: flex; background-color: goldenrod; background-color: rgba(217, 42, 42, 0.5); 
+    border-radius: 8px; ">
 
         <div style="width: 400px;">
             <button type="button" onclick="displayNextElement(this)">Add user</button>
@@ -44,7 +45,7 @@
             </form>
         </div>
 
-        <div style="width: 30%;">
+        <div style="width: 10%;">
             <button type="button" onclick="displayNextElement(this)">Add food</button>
             <form action="{{ url_for('add_food')}}" method="post" style="display: none;">
                 <label>Name: 

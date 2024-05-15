@@ -12,41 +12,28 @@
     }
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    line-height: 1.6;
-    height: 100%;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* Start aligning items from the top */
-    align-items: center;
-    /* Keep centering horizontally */
-    background-color: rgb(236, 134, 119);
-    border-radius: 8px;
-    border: 10px solid rgb(0, 0, 0);
-    
-}
+body,
 html {
-    font-family: 'Arial', sans-serif;
+    font-family: 'PoetsenOne', Arial, sans-serif;
     color: #333;
     line-height: 1.6;
     height: 100%;
-    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     /* Start aligning items from the top */
     align-items: center;
-    /* Keep centering horizontally */
+    /* Center horizontally */
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background-color: #c9dcdf;
-    background-image: url('../static/image_02.webp'); /* Path to your background image */
-    background-size: cover; /* Ensure the background image covers the entire element */
-    background-position: center; /* Center the background image */
-
-    
+    background-image: url('../static/image_02.webp');
+    /* Path to your background image */
+    background-size: cover;
+    /* Ensure the background image covers the entire element */
+    background-position: center;
+    /* Center the background image */
 }
 
 label {
@@ -54,12 +41,6 @@ label {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
-/* label {
-    display: block;
-    margin-bottom: 10px;
-} */
-
 
 button {
     display: block;
@@ -71,7 +52,6 @@ div {
     margin: 10px;
     padding: 5px;
 }
-
 
 button,
 input[type="submit"] {
@@ -94,7 +74,6 @@ input[type="submit"]:hover {
     /* Darker shade of green on hover */
 }
 
-
 input[type="text"],
 input[type="password"],
 input[type="number"],
@@ -105,7 +84,6 @@ select {
     border-radius: 4px;
     margin-top: 5px;
 }
-
 
 .data_table {
     display: flex;
@@ -121,30 +99,29 @@ select {
     margin: 10px;
 }
 
-
 .mealInfo h3,
 .foodMealInfo p {
     margin-bottom: 5px;
 }
 
-
-h1 {
-    font-family: cursive;
-}
-
-
 h2 {
     border-bottom: 2px solid goldenrod;
     padding-bottom: 10px;
     font-family: cursive;
+    background: #c9dcdf;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid goldenrod;
+    padding: 10px;
 }
 
 nav {
     background-color: black;
     padding-bottom: 10px;
     font-family: cursive;
-
+    width: 100%;
 }
+
 .notification {
     background-color: #ffdddd;
     border-left: 5px solid #f44336;
@@ -155,7 +132,7 @@ nav {
 .mealInfo {
     padding: 20px;
     margin: 20px 0;
-    width: 200%;
+    width: 80%;
     background: #c9dcdf;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -175,7 +152,7 @@ nav {
 .formNeedInputLoginIn {
     padding: 20px;
     margin: 20px 0;
-    width: 80%;
+    width: 15%;
     background: #c9dcdf;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -190,9 +167,7 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     border: 8px solid goldenrod;
-
 }
-
 
 .foodMealInfo {
     padding: 20px;
@@ -214,7 +189,8 @@ nav {
     border: 5px solid goldenrod;
 }
 
-a {
+a,
+h1 {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px 5px;
@@ -224,16 +200,22 @@ a {
     transition: background-color 0.3s ease;
 }
 
+h1 {
+    padding-left: 350px;
+}
+
 footer {
+    color: white;
     display: flex;
+    background-color: black;
+    font-family: cursive;
+    width: 100%;
+    height: 10px;
     justify-content: center;
-    /* Centers content horizontally */
     align-items: center;
-    /* Centers content vertically */
     margin-top: auto;
-    /* Pushes the footer to the bottom */
-    height: auto;
-    /* Adjust height as necessary */
+    padding: 10px 0;
+    /* Adjust padding to make the footer thinner */
 }
 
 @keyframes spin {
@@ -255,4 +237,15 @@ footer {
     /* Ensures the image does not have extra space around it */
     margin: auto;
     /* Centers the image if within a block */
+}
+
+
+h1 {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    /* Adjust the size as needed */
+    font-style: normal;
+    margin: 0;
+    padding-left: 330px;
 }
