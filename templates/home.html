@@ -3,11 +3,12 @@
 {% block content %}
     <h2>Home</h2>
     <div class= CenterArea>
-    <div style="display: flex;">
+    <div style="display: flex; justify-content: center;
+    align-items: center;">
 
         <button type="button"><a href="{{ url_for('login') }}">Login</a></button>
 
-        <button type="button"><a href="{{ url_for('add_new') }}">Add new</a></button>
+        <button type="button"><a href="{{ url_for('add_new') }}">Add New</a></button>
 
     </div>
     <div>
