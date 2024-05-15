@@ -106,16 +106,16 @@ select {
 
 h2 {
     border-bottom: 2px solid goldenrod;
-    padding-bottom: 10px;
     font-family: cursive;
     background: #c9dcdf;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     border: 5px solid goldenrod;
     padding: 10px;
+
 }
 
-nav {
+.nav {
     background-color: black;
     padding-bottom: 10px;
     font-family: cursive;
@@ -200,6 +200,20 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
+a {
+    padding: 0;
+}
+
+.UserInfo {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s ease;
+    background-color: #c9dcdf;
+}
+
 h1 {
     padding-left: 350px;
 }
@@ -247,5 +261,5 @@ h1 {
     /* Adjust the size as needed */
     font-style: normal;
     margin: 0;
-    padding-left: 330px;
+    padding-left: 430px;
 }
