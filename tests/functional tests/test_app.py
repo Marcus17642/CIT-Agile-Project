@@ -1,8 +1,9 @@
-from flask import url_for
+
 import sys
 import pytest
 sys.path.append('C:\\Users\\user\\Documents\\CIT term 2\\Agile project\\second repository\\CIT-Agile-Project') # Adjust the path accordingly
 from app import app, db
+
 
 from models import Food, Meal, FoodMeal
 @pytest.fixture
@@ -15,15 +16,36 @@ def test_homepage(client):
     response = client.get('/')
     assert response.status_code == 200
     assert b'Home' in response.data
+    assert b'Login' in response.data
+    assert b'Add New' in response.data
+    assert b'Homepage' in response.data
+    assert b'Users' in response.data
+    assert b'Food' in response.data
+    assert b'My Food Tracker' in response.data
 
-def test_food(client):
+def test_login(client):
     response = client.get('/login')
     assert response.status_code == 200
+    assert b'Login' in response.data
     assert b'Username' in response.data
     assert b'Password' in response.data
 
-#this is a wrong unit test for posting
+#addnew works
+def test_food(client):
+    response = client.get('/addnew')
+    assert response.status_code == 200
+
+#post("/api/products/", {"name": "ribeye steak", "price": 25.99})
 """
+    assert b'Food' in response.data
+    assert b'Name' in response.data
+    assert b'Calories' in response.data
+    assert b'Protein' in response.data
+    assert b'Carbs' in response.data
+    assert b'Fat' in response.data
+
+#this is a wrong unit test for posting
+
 def test_post(client):
     response = client.post('/', data={'key': 'value'})
     assert response.status_code == 200
