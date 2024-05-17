@@ -1,9 +1,11 @@
 from flask import *
+
 from sqlalchemy import select
 from pathlib import Path
 from db import db
 from models import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+
 
 def updateFoolMealCSV():
     data = "meal_id,food_id,amount"

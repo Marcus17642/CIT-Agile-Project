@@ -1,3 +1,4 @@
+
 import sys
 import pytest
 sys.path.append('C:\\Users\\user\\Documents\\CIT term 2\\Agile project\\second repository\\CIT-Agile-Project') 
@@ -34,6 +35,7 @@ def test_user(sample_user):
     WHEN valid data is passed in
     THEN check that the validation is successful
     """
+    assert sample_user.id is not None
     assert sample_user.name == "Test User"
     assert sample_user.phone == "123456789"
     assert sample_user.height == 170.0
@@ -78,3 +80,40 @@ def test_validate_foodmeal_data_nominal():
     assert foodmeal_data.meal_id == 1
     assert foodmeal_data.food_id == 1
     assert foodmeal_data.amount == 100
+
+
+def test_meal_initialization():
+    user = User(
+        name="Test User",
+        phone="123456789",
+        height=170.0,
+        weight=70.0,
+        gender="Male",
+        age=25,
+        password="testpassword"
+    )
+    meal = Meal(name="Test Meal", user=user)
+    assert meal.name == "Test Meal"
+    assert meal.user == user
+
+def test_meal_get_macros():
+    user = User(
+        name="Test User",
+        phone="123456789",
+        height=170.0,
+        weight=70.0,
+        gender="Male",
+        age=25,
+        password="testpassword"
+    )
+    meal = Meal(name="Test Meal", user=user)
+    food1 = Food(name="Food 1", calories=100, protein=10, carbs=20, fat=5)
+    food2 = Food(name="Food 2", calories=200, protein=20, carbs=30, fat=10)
+    food3 = Food(name="Food 3", calories=300, protein=30, carbs=40, fat=15)
+    foodmeal1 = FoodMeal(meal=meal, food=food1, amount=100)
+    foodmeal2 = FoodMeal(meal=meal, food=food2, amount=100)
+    foodmeal3 = FoodMeal(meal=meal, food=food3, amount=100)
+    meal.foodlist = [foodmeal1, foodmeal2, foodmeal3]
+    assert meal.getMacros() == {"fat": 30, "protein": 60, "carbs": 90, "calories": 600}
+
+    

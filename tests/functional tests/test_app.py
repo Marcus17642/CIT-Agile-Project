@@ -1,11 +1,17 @@
 
 import sys
 import pytest
+from flask import url_for
 sys.path.append('C:\\Users\\user\\Documents\\CIT term 2\\Agile project\\second repository\\CIT-Agile-Project') # Adjust the path accordingly
 from app import app, db
+import random
+
+#make sure you run manage.py before doing the unit test
+#run with python -m pytest --cov
+#run on cit agile project
 
 
-from models import Food, Meal, FoodMeal
+from models import Food, Meal, FoodMeal, User
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
@@ -31,75 +37,50 @@ def test_login(client):
     assert b'Password' in response.data
 
 #addnew works
-def test_food(client):
+def test_wrong(client):
+    response = client.get('/dog')
+    assert response.status_code == 404
+
+def test_addnew(client):
     response = client.get('/addnew')
     assert response.status_code == 200
 
-#post("/api/products/", {"name": "ribeye steak", "price": 25.99})
-"""
-    assert b'Food' in response.data
-    assert b'Name' in response.data
-    assert b'Calories' in response.data
-    assert b'Protein' in response.data
-    assert b'Carbs' in response.data
-    assert b'Fat' in response.data
-
-#this is a wrong unit test for posting
-
-def test_post(client):
-    response = client.post('/', data={'key': 'value'})
+def test_users_list(client):
+    response = client.get('/users')
     assert response.status_code == 200
-    assert b'Home' in response.data
+    assert b'Users' in response.data
+
+def test_food_list(client):
+    response = client.get('/food')
+    assert response.status_code == 200
+    assert b'Food' in response.data
 
 
-def test_add_foodmeal(client):
-    # Create a test meal and food
-    meal = Meal(id=1)
-    food = Food(id=1)
-    db.session.add(meal)
-    db.session.add(food)
-    db.session.commit()
+def test_add_user(client):
+    data = {'name': f"Test User {random.randint(1, 1000)}", 'password': 'password', 'phone': '1234567890', 'height': '170', 'weight': '60', 'gender': 'male', 'age': '25', 'activity_level': '1.2'}
+    response = client.post('/adduser', data=data, follow_redirects=True)
+    assert response.status_code == 200
+  
+def test_add_meal(client):
+    data = {'name': f"Test User {random.randint(1, 1000)}", 'food_id': '1', 'amount': '2'}
+    response = client.post('/users/1/addmeal', data=data, follow_redirects=True)
+    assert response.status_code == 200
+ 
+def test_delete_meal(client):
+    response = client.post('/users/1/deletemeal/1', follow_redirects=True)
+    assert response.status_code == 200
 
-    # Send a POST request with valid data
-    data = {"food_id": [1, 2], "amount": [10, 20]}
-    response = client.post('/users/1/addfoodmeal/1', data=data, content_type='application/x-www-form-urlencoded')
+def test_delete_foodmeal(client):
+    response = client.post('/users/1/deletefoodmeal/1', follow_redirects=True)
+    assert response.status_code == 200
 
-    # Assert response status code and content
-    assert response.status_code == 201
-    assert response.json() == {"message": "Food meals added successfully"}
+def test_login_post(client):
+    data = {'username': 'Test User', 'password': 'password'}
+    response = client.post('/loginpost', data=data, follow_redirects=True)
+    assert response.status_code == 200
 
-    # Assert food meals were created in the database
-    food_meals = FoodMeal.query.all()
-    assert len(food_meals) == 2
-    assert food_meals[0].meal_id == 1
-    assert food_meals[0].food_id == 1
-    assert food_meals[0].amount == 10
-    assert food_meals[1].meal_id == 1
-    assert food_meals[1].food_id == 2
-    assert food_meals[1].amount == 20
-
-    # Test invalid input data
-    data = {"food_id": [1, 2], "amount": [10]}  # mismatched lengths
-    response = client.post('/users/1/addfoodmeal/1', data=data, content_type='application/x-www-form-urlencoded')
-    assert response.status_code == 400
-    assert response.json() == {"error": "Invalid input data"}
+  
 
 
-def test_add_foodmeal(client):
-    # Assuming you have test users and meals created in your database
-    user_id = 1
-    meal_id = 1
-    data = {
-        "food_id": [1, 2],  # Assuming you have food IDs in your database
-        "amount": [100, 200]  # Amounts corresponding to each food
-    }
-    response = client.post(url_for('add_foodmeal', user_id=user_id, meal_id=meal_id), data=data)
-    
-    # Check if the response status code is 302 (redirect)
-    assert response.status_code == 302
-    
-    # Optionally, you can check if the FoodMeal objects are added to the database correctly
-    food_meals = FoodMeal.query.filter_by(meal_id=meal_id).all()
-    assert len(food_meals) == 2  # Assuming two food items were 
-    
-"""
+
+#post("/api/products/", {"name": "ribeye steak", "price": 25.99})
