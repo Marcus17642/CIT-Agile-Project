@@ -1,29 +1,297 @@
-.data_table {
-    display: flex;
+@media (max-width: 768px) {
+
+    .formNeedInput,
+    .mealInfo,
+    .foodMealInfo {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .data_table {
+        flex-direction: column;
+    }
 }
+
+body,
+html {
+    font-family: 'PoetsenOne', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Start aligning items from the top */
+    align-items: center;
+    /* Center horizontally */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #c9dcdf;
+    background-image: url('../static/image_02.webp');
+    /* Path to your background image */
+    background-size: cover;
+    /* Ensure the background image covers the entire element */
+    background-position: center;
+    /* Center the background image */
+}
+
 label {
     display: block;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-button {
-    display: block;
-    margin: 2px;
-    border: 1px solid red;
-}
-.formNeedInput, .mealInfo, .foodMealInfo, span {
-    border: 1px solid black;
-    padding: 10px;
-    width: 40%;
-    margin: 10px;
-}
+
+
+
 div {
     margin: 10px;
     padding: 5px;
 }
-.foodMealInfo {
-    width: 60%;
+
+button,
+input[type="submit"] {
+    background-color: goldenrod;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    border: 3px solid rgb(0, 0, 0);
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    font-family: cursive;
+    /* Smooth transition for hover effect */
 }
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: rgb(77, 204, 161);
+    color: black;
+    /* Darker shade of green on hover */
+}
+
+button a:hover,
+input[type="submit"]:hover {
+    background-color: rgb(77, 204, 161);
+    color: black;
+    /* Darker shade of green on hover */
+}
+
+
+
+nav a:hover,
+input[type="submit"]:hover {
+    background-color: rgb(77, 204, 161);
+    color: black;
+    /* Darker shade of green on hover */
+}
+
+nav a{
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Poetsen One;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.data_table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background: #c9dcdf;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.data_table div {
+    margin: 10px;
+}
+
+.mealInfo h3,
+.foodMealInfo p {
+    margin-bottom: 5px;
+}
+
+h2 {
+
+    font-family: Poetsen One;
+    background-image: url('../static/img_04.png');
+    /* Path to your background image */
+    background-size: cover;
+    /* Ensure the background image covers the entire element */
+    background-position: center;
+    /* Center the background image */
+    padding-left: 120px;
+    padding-right:120px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0;
+
+}
+
+nav {
+    background-color: black;
+    padding-bottom: 10px;
+    width: 100%;
+    
+}
+
+.notification {
+    background-color: #ffdddd;
+    border-left: 5px solid #f44336;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.mealInfo {
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%;
+    background: #c9dcdf;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid goldenrod;
+}
+
 .formNeedInput {
-    width: 60%;
+    padding: 20px;
+    margin: 20px 0;
+    width: 50%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid goldenrod;
 }
+
+.formNeedInputLoginIn {
+    padding: 20px;
+    margin: 20px 0;
+    width: 15%;
+    background: #c9dcdf;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid goldenrod;
+}
+
+.formNeedInputFood {
+    padding: 20px;
+    margin: 20px 0;
+    width: 50%;
+    background: #c9dcdf;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid goldenrod;
+}
+
+.foodMealInfo {
+    padding: 20px;
+    margin: 20px 0;
+    width: 50%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid goldenrod;
+}
+
+.form-login {
+    max-width: 360px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid goldenrod;
+}
+
+a,
+h1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+a {
+    padding: 0;
+    font-family: cursive;
+}
+
+.UserInfo {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s ease;
+    background-color: #c9dcdf;
+}
+
+h1 {
+    padding-left: 350px;
+}
+
+footer {
+    color: white;
+    display: flex;
+    background-color: black;
+    font-family: cursive;
+    width: 100%;
+    height: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 10px 0;
+    /* Adjust padding to make the footer thinner */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+        /* Start the spin from 0 degrees */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Spin to 360 degrees */
+    }
+}
+
+.spinning-image {
+    animation: spin 5s linear infinite;
+    /* Apply the spin animation */
+    display: block;
+    /* Ensures the image does not have extra space around it */
+    margin: auto;
+    /* Centers the image if within a block */
+}
+
+
+h1 {
+    font-family: "Pacifico", sans-serif;
+    font-weight: 450;
+    font-size: 2rem;
+    /* Adjust the size as needed */
+    font-style: normal;
+    margin: 0;
+    padding-left: 340px;
+}
+
+
+  
