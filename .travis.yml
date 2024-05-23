@@ -1,0 +1,10 @@
+language: python  
+python:  
+- "3.9"  
+install: "pip install flask"  
+install: "pip install flask-sqlalchemy"
+install: "pip install requests"
+install: "pip install flask_login"
+script:  
+- py -m pytest --cov
+
