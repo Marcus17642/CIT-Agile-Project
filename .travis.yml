@@ -6,8 +6,10 @@ install:
   - pip install flask-sqlalchemy
   - pip install requests
   - pip install flask_login
+  - pip install pytest-cov
 
 # Run tests
 script:
+  - python manage.py
   - python -m pytest --cov
 
