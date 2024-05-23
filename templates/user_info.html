@@ -92,7 +92,11 @@
         <span>{{ user.getTotalMacros().protein|round|int }}g protein</span>
         <span>{{ user.getTotalMacros().carbs|round|int }}g carbs</span>
         <span>{{ user.getTotalMacros().fat|round|int }}g fat</span>
-        <span>{{ user.getTotalMacros().calories|round|int }}kcal</span>
+        {% if user.getTotalMacros().calories|round|int > user.tdee %}
+            <span style="color: green;">{{ user.getTotalMacros().calories|round|int }}kcal</span>
+        {% else %}
+            <span style="color: red;">{{ user.getTotalMacros().calories|round|int }}kcal</span>
+        {% endif %}
     </div>
 
     <form 
