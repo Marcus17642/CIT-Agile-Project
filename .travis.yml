@@ -8,7 +8,14 @@ install:
   - pip install flask_login
   - pip install pytest-cov
 
-# Run tests
+before_script:
+  - python manage.py runserver &
+  - sleep 5                      
+
 script:
   - python -m pytest --cov
+
+after_script:
+  - pkill -f "python manage.py runserver" # Terminate the server
+
 
