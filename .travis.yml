@@ -10,6 +10,5 @@ install:
 
 # Run tests
 script:
-  - python manage.py
   - python -m pytest --cov
 
