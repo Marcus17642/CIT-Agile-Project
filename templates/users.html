@@ -13,7 +13,7 @@
         <h3>Name</h3>
         {% for each in users %}
             <p class="UserInfo">
-                <a style="color: black;" href="{{ url_for('user_info', user_id=each.id) }}"> 
+                <a style="color: black;" class="UserName" href="{{ url_for('user_info', user_id=each.id) }}"> 
                     {{ each.name }} 
                 </a>
             </p>
