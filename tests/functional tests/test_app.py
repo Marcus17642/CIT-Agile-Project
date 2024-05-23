@@ -44,11 +44,14 @@ def test_wrong(client):
 def test_addnew(client):
     response = client.get('/addnew')
     assert response.status_code == 200
+    assert b'Add user' in response.data
+    assert b'Add food' in response.data
 
 def test_users_list(client):
     response = client.get('/users')
     assert response.status_code == 200
     assert b'Users' in response.data
+
 
 def test_food_list(client):
     response = client.get('/food')
@@ -79,7 +82,11 @@ def test_login_post(client):
     response = client.post('/loginpost', data=data, follow_redirects=True)
     assert response.status_code == 200
 
-  
+
+def test_add_food(client):
+    data = {'name': f"Test food {random.randint(1, 1000)}", 'calories': '100', 'protein': '10', 'fat': '5', 'carbs': '20'}
+    response = client.post('/addfood', data=data, follow_redirects=True)
+    assert response.status_code == 200
 
 
 
