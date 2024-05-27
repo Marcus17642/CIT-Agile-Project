@@ -21,19 +21,19 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Start aligning items from the top */
+
     align-items: center;
-    /* Center horizontally */
+
     margin: 0;
     padding: 0;
     width: 100%;
     background-color: #c9dcdf;
     background-image: url('../static/image_02.webp');
-    /* Path to your background image */
+
     background-size: cover;
-    /* Ensure the background image covers the entire element */
+
     background-position: center;
-    /* Center the background image */
+
 }
 
 label {
@@ -62,21 +62,21 @@ input[type="submit"] {
     margin-top: 10px;
     transition: background-color 0.3s;
     font-family: cursive;
-    /* Smooth transition for hover effect */
+
 }
 
 button:hover,
 input[type="submit"]:hover {
     background-color: rgb(77, 204, 161);
     color: black;
-    /* Darker shade of green on hover */
+
 }
 
 button a:hover,
 input[type="submit"]:hover {
     background-color: rgb(77, 204, 161);
     color: black;
-    /* Darker shade of green on hover */
+
 }
 
 
@@ -85,10 +85,10 @@ nav a:hover,
 input[type="submit"]:hover {
     background-color: rgb(77, 204, 161);
     color: black;
-    /* Darker shade of green on hover */
+
 }
 
-nav a{
+nav a {
     padding: 10px;
     margin: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -130,13 +130,13 @@ h2 {
 
     font-family: Poetsen One;
     background-image: url('../static/img_04.png');
-    /* Path to your background image */
+
     background-size: cover;
-    /* Ensure the background image covers the entire element */
+
     background-position: center;
-    /* Center the background image */
+
     padding-left: 120px;
-    padding-right:120px;
+    padding-right: 120px;
     padding-top: 40px;
     padding-bottom: 40px;
     margin: 0;
@@ -147,7 +147,7 @@ nav {
     background-color: black;
     padding-bottom: 10px;
     width: 100%;
-    
+
 }
 
 .notification {
@@ -262,28 +262,28 @@ footer {
     align-items: center;
     margin-top: auto;
     padding: 10px 0;
-    /* Adjust padding to make the footer thinner */
+
 }
 
 @keyframes spin {
     from {
         transform: rotate(0deg);
-        /* Start the spin from 0 degrees */
+
     }
 
     to {
         transform: rotate(360deg);
-        /* Spin to 360 degrees */
+
     }
 }
 
 .spinning-image {
     animation: spin 5s linear infinite;
-    /* Apply the spin animation */
+
     display: block;
-    /* Ensures the image does not have extra space around it */
+
     margin: auto;
-    /* Centers the image if within a block */
+
 }
 
 
@@ -291,12 +291,7 @@ h1 {
     font-family: "Pacifico", sans-serif;
     font-weight: 450;
     font-size: 2rem;
-    /* Adjust the size as needed */
     font-style: normal;
     margin: 0;
-    padding-left: 340px;
+    padding-left: 435px;
 }
-
-
-
-  
